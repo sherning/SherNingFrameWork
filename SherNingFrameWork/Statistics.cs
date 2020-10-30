@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,8 @@ namespace SherNingFrameWork
         public static void Call()
         {
             PopulationVsSampleVariance();
+            Console.WriteLine(GetPopulationStdDev(1,2,3,4,5));
+            Console.WriteLine(GetPopulationStdDevAlgebra(1,2,3,4,5));
         }
 
         private static void PopulationVsSampleVariance()
@@ -110,7 +113,7 @@ namespace SherNingFrameWork
             return sampleArr;
         }
 
-        private static double GetPopulationStdDev(int[] population)
+        private static double GetPopulationStdDev(params int[] population)
         {
             // for trading, use population since the population is usually less than 100 data entries
             // population mean denoted by miu
@@ -128,7 +131,25 @@ namespace SherNingFrameWork
             return Math.Sqrt(variance);
         }
 
-        private static double GetSampleStdDev(int[] sample)
+        private static double GetPopulationStdDevAlgebra(params int[] population)
+        {
+            // population mean denoted by miu
+            double miu = Mean(population);
+
+            // calculate variance miuSquared
+            double variance = 0;
+            for (int i = 0; i < population.Length; i++)
+                variance += Math.Pow(population[i], 2);
+
+            // new algebra formula for calculating variance, only for population.
+            variance /= population.Length;
+            variance -= Math.Pow(miu, 2);
+
+            // return standard deviation, sigma
+            return Math.Sqrt(variance);
+        }
+
+        private static double GetSampleStdDev(params int[] sample)
         {
             // population mean denoted by x Bar
             double xBar = Mean(sample);
