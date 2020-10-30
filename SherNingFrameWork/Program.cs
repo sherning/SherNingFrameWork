@@ -10,7 +10,8 @@ namespace SherNingFrameWork
     {
         static void Main(string[] args)
         {
-            CodingChallenge.Call();
+            //CodingChallenge.Call();
+            Statistics.Call();
         }
     }
 }
