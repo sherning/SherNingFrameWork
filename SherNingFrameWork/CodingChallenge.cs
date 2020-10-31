@@ -33,7 +33,8 @@ namespace SherNingFrameWork
         /*/
         public static void Call()
         {
-            Challenge_1();
+            //Challenge_1();
+            //Challenge_2();
         } 
 
         #region Challenge 1
@@ -128,6 +129,47 @@ namespace SherNingFrameWork
             Array.Reverse(arr);
 
             return arr;
+        }
+        #endregion
+
+        #region Challenge 2
+        //================================= Project Documentation =================================
+        // Challenge Name : Coding Challenge 2
+        // Objectives     : f("Dec 29 2018", "Jan 1 2019") -> 3, f("Jul 20 2020","Jul 30 2020") -> 10
+        // Description    : return the number of days 2nd input - 1st input
+        // Solution       : 
+        //
+        // Step 1: Parse string into datetime
+        // Step 2: Calculate the number of days different
+        //=========================================================================================
+
+        private static void Challenge_2()
+        {
+            int result1 = DifferenceInDays("Dec 29 2018", "Jan 1 2019");
+            Console.WriteLine("The difference in days: " + result1 + "\n");
+
+            int result2 = DifferenceInDays("Jul 20 2020", "Jul 30 2020");
+            Console.WriteLine("The difference in days: " + result2 + "\n");
+        }
+
+        private static int DifferenceInDays(string firstDate, string secondDate)
+        {
+            //DateTime date1, date2;
+            // you can define the local variable inside the function
+            bool result1 = StringToDateTime(firstDate, out DateTime date1);
+            if (result1 == false) return -1;
+
+            bool result2 = StringToDateTime(secondDate, out DateTime date2);
+            if (result2 == false) return -2;
+
+            TimeSpan daysDifference = date2 - date1;
+            return daysDifference.Days;
+        }
+
+        private static bool StringToDateTime(string dateTime, out DateTime result)
+        {
+            bool parseSuccessful = DateTime.TryParse(dateTime, out result);
+            return parseSuccessful;
         }
         #endregion
     }
