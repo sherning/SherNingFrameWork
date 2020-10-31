@@ -119,7 +119,7 @@ namespace SherNingFrameWork
             // population mean denoted by miu
             double miu = Mean(population);
 
-            // calculate variance miuSquared
+            // calculate variance sigmaSquared
             double variance = 0;
             for (int i = 0; i < population.Length; i++)
                 variance += Math.Pow(population[i] - miu, 2);
@@ -136,7 +136,7 @@ namespace SherNingFrameWork
             // population mean denoted by miu
             double miu = Mean(population);
 
-            // calculate variance miuSquared
+            // calculate variance sigmaSquared
             double variance = 0;
             for (int i = 0; i < population.Length; i++)
                 variance += Math.Pow(population[i], 2);
@@ -159,7 +159,7 @@ namespace SherNingFrameWork
             for (int i = 0; i < sample.Length; i++)
                 variance += Math.Pow(sample[i] - xBar, 2);
 
-            // divided by n (sample length)
+            // divided by n - 1 (sample length)
             variance /= (sample.Length - 1);
 
             // return standard deviation, s
