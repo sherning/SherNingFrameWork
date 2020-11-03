@@ -34,7 +34,7 @@ namespace SherNingFrameWork
 
         public static void Call()
         {
-        
+            Console.WriteLine(Factorial(5));
         }
 
         private static double Factorial(int n)

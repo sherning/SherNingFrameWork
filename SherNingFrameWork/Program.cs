@@ -11,7 +11,8 @@ namespace SherNingFrameWork
         static void Main(string[] args)
         {
             //CodingChallenge.Call();
-            Statistics.Call();
+            //Statistics.Call();
+            Probability.Call();
         }
     }
 }
