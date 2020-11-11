@@ -39,12 +39,26 @@ namespace SherNingFrameWork
 
         private static void Test1()
         {
-            int n = 9;
-            int r = 7;
+            int n = 5;
+            int r = 3;
             Console.WriteLine("Permutation: " + Permutation(n, r));
             Console.WriteLine("Combination: " + Combination(n, r));
             Console.WriteLine("Math Power: " + Math.Pow(3, -4));
             Console.WriteLine("Power: " + Power(3, -4));
+            Console.WriteLine("Dependent Events: " + (DependentEvents(4, 36) * Combination(9, 4)));
+        }
+
+        private static void Test2(bool cast = true)
+        {
+            int i = 5;
+            int j = 3;
+            double ans;
+            if (cast)
+                // you will need to cast to preserve results
+                ans = (double)i / (double)j;
+            else
+                ans = i / j;
+            Console.WriteLine(ans);
         }
 
         private static double Factorial(int n)
@@ -73,6 +87,9 @@ namespace SherNingFrameWork
             // nCr
             if (n == r) return 1;
 
+            // xC1 = x 
+            if (r == 1) return n;
+
             // permutation / nPn == (n!) 
             return Permutation(n, r) / Factorial(r);
         }
@@ -99,6 +116,14 @@ namespace SherNingFrameWork
             }
 
             return ret;
+        }
+
+        private static double DependentEvents(double numerator, double denominator)
+        {
+            if (denominator == 0 || numerator == 0) return 1;
+
+            // P(X) = 4/5 * 3/4 * 2/3 * 1/2 * 1
+            return numerator / denominator * DependentEvents(numerator - 1, denominator - 1);
         }
     }
 }
