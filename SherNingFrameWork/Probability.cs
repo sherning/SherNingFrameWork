@@ -34,11 +34,22 @@ namespace SherNingFrameWork
 
         public static void Call()
         {
-            Console.WriteLine(Factorial(5));
+            Test1();
+        }
+
+        private static void Test1()
+        {
+            int n = 9;
+            int r = 7;
+            Console.WriteLine("Permutation: " + Permutation(n, r));
+            Console.WriteLine("Combination: " + Combination(n, r));
         }
 
         private static double Factorial(int n)
         {
+            // 0! = 1
+            if (n == 0) return 1;
+
             double ret = 1;
             for (int i = n; i > 0; i--)
                 ret *= i;
@@ -46,5 +57,20 @@ namespace SherNingFrameWork
             return ret;
         }
 
+        private static double Permutation(int n, int r)
+        {
+            // nPr 
+            if (n == r) return Factorial(n);
+            return Factorial(n) / Factorial(n - r);
+        }
+
+        private static double Combination(int n, int r)
+        {
+            // nCr
+            if (n == r) return 1;
+
+            // permutation / nPn == (n!) 
+            return Permutation(n, r) / Factorial(r);
+        }
     }
 }
