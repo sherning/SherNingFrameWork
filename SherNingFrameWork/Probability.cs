@@ -125,8 +125,5 @@ namespace SherNingFrameWork
             // P(X) = 4/5 * 3/4 * 2/3 * 1/2 * 1
             return numerator / denominator * DependentEvents(numerator - 1, denominator - 1);
         }
-
-        private static void GitFetchTest()
-        { }
     }
 }
