@@ -8,11 +8,10 @@ namespace SherNingFrameWork
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //CodingChallenge.Call();
-            //Statistics.Call();
-            Probability.Call();
+            //DelegatesAndEvents.Main();
+            EventsPractice.Run();
         }
     }
 }
