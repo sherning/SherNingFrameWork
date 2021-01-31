@@ -11,7 +11,8 @@ namespace SherNingFrameWork
         public static void Main(string[] args)
         {
             //DelegatesAndEvents.Main();
-            EventsPractice.Run();
+            //EventsPractice.Run();
+            PasswordPractice.Run();
         }
     }
 }

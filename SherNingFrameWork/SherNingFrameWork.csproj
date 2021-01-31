@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="EventsAndDelegates.cs" />
     <Compile Include="EventsPractice.cs" />
+    <Compile Include="PasswordPractice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScratchPad.cs" />
