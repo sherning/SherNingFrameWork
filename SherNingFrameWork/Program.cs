@@ -12,7 +12,13 @@ namespace SherNingFrameWork
         {
             //DelegatesAndEvents.Main();
             //EventsPractice.Run();
-            PasswordPractice.Run();
+            //PasswordPractice.Run();
+            //UnderstandingMC.Run();
+            //StandardDeviationCalculator.Run();
+
+            //FinanceCalculator.Run();
+            NumberOfSundays test = new NumberOfSundays();
+            test.Run();
         }
     }
 }
